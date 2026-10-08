@@ -1,154 +1,266 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pranshu Jain · Product Manager</title>
-<meta name="description" content="Pranshu Jain — Product Manager in fintech lending. IIT Delhi engineer building products 0→1 and scaling them 1→100.">
+<meta name="description" content="Pranshu Jain, Product Manager in fintech lending. IIT Delhi engineer building products 0 to 1 and scaling them 1 to 100.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script>
-  (function () {
-    var t = null;
-    try { t = localStorage.getItem('theme'); } catch (e) {}
-    if (!t) t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', t);
-  })();
-</script>
 <style>
-  :root, [data-theme="dark"] {
-    --bg: #0B1F3A; --card: #12305A; --card-border: transparent;
-    --text: #FFFFFF; --body: #CBD5E1; --muted: #93A3B8;
-    --eyebrow: #FBBF24; --sub: #93C5FD; --bar: #60A5FA; --amber: #F59E0B;
-    --pill: #1E3A5F; --pill-border: #3B5B85; --pill-text: #BFDBFE;
-    --btn: #2563EB; --btn-text: #FFFFFF; --ghost-border: #93C5FD; --ghost-text: #93C5FD;
-    --chip: #1E3A5F; --nav-bg: rgba(11,31,58,.85); --blob1: rgba(29,78,216,.35); --blob2: rgba(56,189,248,.12);
-    --cta-bg: #1D4ED8;
-  }
-  [data-theme="light"] {
-    --bg: #F8FAFC; --card: #FFFFFF; --card-border: #E2E8F0;
-    --text: #0B1F3A; --body: #334155; --muted: #64748B;
-    --eyebrow: #1D4ED8; --sub: #1D4ED8; --bar: #2563EB; --amber: #F59E0B;
-    --pill: #DBEAFE; --pill-border: #BFDBFE; --pill-text: #1E3A8A;
-    --btn: #2563EB; --btn-text: #FFFFFF; --ghost-border: #93C5FD; --ghost-text: #1D4ED8;
-    --chip: #DBEAFE; --nav-bg: rgba(248,250,252,.88); --blob1: rgba(29,78,216,.10); --blob2: rgba(56,189,248,.14);
-    --cta-bg: #1D4ED8;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
-  body { margin: 0; background: var(--bg); color: var(--body); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; font-size: 15px; line-height: 1.6; transition: background .25s, color .25s; }
-  a { color: inherit; }
-  .wrap { max-width: 1126px; margin: 0 auto; padding: 0 20px; }
-  h1, h2, h3, h4 { color: var(--text); margin: 0; line-height: 1.25; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #0B1F3A; }
+/* Pranshu Jain portfolio: interactive edition. Everything is scoped under .pj */
+.pj, .pj[data-mode="dark"] {
+  --bg: #0B1F3A; --bg2: #0E2747; --card: #12305A; --card-border: rgba(147,197,253,.10);
+  --text: #FFFFFF; --body: #CBD5E1; --muted: #93A3B8;
+  --eyebrow: #FBBF24; --sub: #93C5FD; --bar: #60A5FA; --amber: #F59E0B;
+  --pill: #1E3A5F; --pill-border: #3B5B85; --pill-text: #BFDBFE;
+  --btn: #2563EB; --ghost-border: #93C5FD; --ghost-text: #93C5FD;
+  --chip: #1E3A5F; --nav-bg: rgba(11,31,58,.72);
+  --float1: rgba(96,165,250,.22); --float2: rgba(245,158,11,.20); --float3: rgba(147,197,253,.14);
+  --glow: rgba(96,165,250,.20); --glare: rgba(255,255,255,.07);
+  --shadow: 0 24px 60px -24px rgba(0,0,0,.55);
+  --cta-bg: #1D4ED8;
+}
+.pj[data-mode="light"] {
+  --bg: #F8FAFC; --bg2: #EEF4FF; --card: #FFFFFF; --card-border: #E2E8F0;
+  --text: #0B1F3A; --body: #334155; --muted: #64748B;
+  --eyebrow: #1D4ED8; --sub: #1D4ED8; --bar: #2563EB; --amber: #F59E0B;
+  --pill: #DBEAFE; --pill-border: #BFDBFE; --pill-text: #1E3A8A;
+  --btn: #2563EB; --ghost-border: #93C5FD; --ghost-text: #1D4ED8;
+  --chip: #DBEAFE; --nav-bg: rgba(248,250,252,.78);
+  --float1: rgba(37,99,235,.13); --float2: rgba(245,158,11,.18); --float3: rgba(29,78,216,.08);
+  --glow: rgba(37,99,235,.10); --glare: rgba(37,99,235,.06);
+  --shadow: 0 24px 60px -28px rgba(15,23,42,.28);
+  --cta-bg: #1D4ED8;
+}
+.pj { position: relative; min-height: 100vh; background: var(--bg); color: var(--body); font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 15px; line-height: 1.6; transition: background .4s ease, color .4s ease; overflow-x: clip; }
+.pj *, .pj *::before, .pj *::after { box-sizing: border-box; }
+.pj a { color: inherit; }
+.pj h1, .pj h2, .pj h3, .pj h4 { color: var(--text); margin: 0; line-height: 1.25; }
+.pj p { margin: 0 0 1em; }
+.pj ul { margin: 0; }
+.pj .wrap { position: relative; max-width: 1126px; margin: 0 auto; padding: 0 20px; }
+.pj section { position: relative; padding: 84px 0; scroll-margin-top: 70px; }
 
-  /* Nav */
-  header.nav { position: sticky; top: 0; z-index: 10; background: var(--nav-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
-  .brand { font-weight: 700; font-size: 20px; color: var(--text); text-decoration: none; }
-  .nav nav { display: flex; align-items: center; gap: 24px; }
-  .nav nav a { text-decoration: none; color: var(--body); font-size: 15px; }
-  .nav nav a:hover { color: var(--text); }
-  .toggle { border: 1px solid var(--pill-border); background: var(--pill); color: var(--pill-text); border-radius: 999px; width: 40px; height: 40px; cursor: pointer; display: grid; place-items: center; }
-  .toggle svg { width: 18px; height: 18px; }
-  [data-theme="dark"] .icon-moon, [data-theme="light"] .icon-sun { display: none; }
-  @media (max-width: 760px) { .nav nav a.link { display: none; } }
+/* Scroll progress */
+.pj .progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 30; transform-origin: 0 50%; transform: scaleX(var(--p, 0)); background: linear-gradient(90deg, var(--bar), var(--amber)); }
 
-  section { padding: 72px 0; }
-  .eyebrow { color: var(--eyebrow); font-weight: 700; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 8px; }
-  .title { font-size: clamp(28px, 4vw, 38px); font-weight: 700; }
-  .title + .rule { width: 48px; height: 5px; border-radius: 3px; background: var(--amber); margin: 14px 0 36px; }
+/* Floating scroll layer */
+.pj .floaters { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.pj .fl { position: absolute; left: var(--x); top: var(--y); will-change: transform; color: var(--bar); }
+.pj .fl.dot { width: var(--s); height: var(--s); border-radius: 50%; background: var(--float1); }
+.pj .fl.dot.am { background: var(--float2); }
+.pj .fl.ring { width: var(--s); height: var(--s); border-radius: 50%; border: 2px solid var(--float1); }
+.pj .fl.ring.am { border-color: var(--float2); }
+.pj .fl.ico { width: var(--s); height: var(--s); display: grid; place-items: center; border-radius: 16px; background: var(--float3); border: 1px solid var(--float1); backdrop-filter: blur(2px); }
+.pj .fl.ico.am { color: var(--amber); border-color: var(--float2); }
+.pj .fl.ico svg { width: 55%; height: 55%; }
+.pj main, .pj footer, .pj header.nav { position: relative; z-index: 1; }
 
-  /* Hero */
-  .hero { position: relative; overflow: hidden; padding: 96px 0 104px; }
-  .blob { position: absolute; border-radius: 50%; pointer-events: none; }
-  .blob.b1 { width: 520px; height: 520px; right: -140px; top: -180px; background: var(--blob1); }
-  .blob.b2 { width: 380px; height: 380px; left: -160px; bottom: -200px; background: var(--blob2); }
-  .hero .wrap { position: relative; display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
-  .hero h1 { font-size: clamp(40px, 6vw, 64px); font-weight: 800; }
-  .hero .role { color: var(--sub); font-size: clamp(18px, 2.2vw, 24px); font-weight: 700; margin: 12px 0 18px; }
-  .hero .lead { font-size: 18px; max-width: 620px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0; padding: 0; list-style: none; }
-  .chips li { background: var(--chip); color: var(--text); border: 1px solid var(--pill-border); padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: 15px; }
-  .chips li.hl { background: var(--amber); color: #0B1F3A; border-color: var(--amber); }
-  .ctas { display: flex; flex-wrap: wrap; gap: 14px; }
-  .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 26px; border-radius: 999px; font-weight: 700; font-size: 17px; text-decoration: none; border: 2px solid transparent; }
-  .btn.primary { background: var(--btn); color: var(--btn-text); }
-  .btn.ghost { border-color: var(--ghost-border); color: var(--ghost-text); }
-  .btn:hover { filter: brightness(1.08); }
-  .photo { position: relative; justify-self: center; width: min(330px, 80vw); aspect-ratio: 330 / 386; }
-  .photo::before { content: ""; position: absolute; inset: 20px -20px -20px 20px; background: var(--amber); border-radius: 28px; }
-  .photo img { position: relative; width: 100%; height: 100%; object-fit: cover; border-radius: 28px; display: block; }
-  @media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; } .photo { order: -1; } }
+/* Nav */
+.pj header.nav { position: sticky; top: 0; z-index: 20; background: var(--nav-bg); backdrop-filter: blur(14px) saturate(1.4); -webkit-backdrop-filter: blur(14px) saturate(1.4); border-bottom: 1px solid var(--card-border); }
+.pj .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+.pj .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; color: var(--text); text-decoration: none; }
+.pj .brand .mono { width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center; font-size: 14px; font-weight: 800; color: #0B1F3A; background: var(--amber); transition: transform .5s cubic-bezier(.3,1.6,.5,1); }
+.pj .brand:hover .mono { transform: rotate(-12deg) scale(1.08); }
+.pj .nav nav { position: relative; display: flex; align-items: center; gap: 6px; }
+.pj .nav nav a { position: relative; z-index: 1; text-decoration: none; color: var(--body); font-size: 15px; font-weight: 500; padding: 7px 13px; border-radius: 999px; transition: color .25s; }
+.pj .nav nav a:hover, .pj .nav nav a.active { color: var(--text); }
+.pj .nav .indicator { position: absolute; z-index: 0; top: 50%; height: 36px; margin-top: -18px; border-radius: 999px; background: var(--pill); border: 1px solid var(--pill-border); opacity: 0; transition: transform .45s cubic-bezier(.3,1.3,.5,1), width .45s cubic-bezier(.3,1.3,.5,1), opacity .3s; }
+.pj .toggle { margin-left: 8px; border: 1px solid var(--pill-border); background: var(--pill); color: var(--pill-text); border-radius: 999px; width: 40px; height: 40px; cursor: pointer; display: grid; place-items: center; overflow: hidden; }
+.pj .toggle svg { width: 18px; height: 18px; transition: transform .6s cubic-bezier(.3,1.5,.5,1); }
+.pj .toggle:hover svg { transform: rotate(40deg) scale(1.1); }
+.pj[data-mode="dark"] .icon-moon, .pj[data-mode="light"] .icon-sun { display: none; }
+@media (max-width: 760px) { .pj .nav nav a.link, .pj .nav .indicator { display: none; } }
 
-  /* Cards */
-  .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
-  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 29px; }
-  @media (max-width: 960px) { .grid3 { grid-template-columns: 1fr; } }
-  @media (max-width: 860px) { .grid2 { grid-template-columns: 1fr; } }
-  .card { background: var(--card); border: 1px solid var(--card-border); border-radius: 24px; padding: 28px; }
-  .card .bar { display: block; width: 36px; height: 5px; border-radius: 3px; background: var(--bar); margin-bottom: 12px; }
-  .card.amber .bar { background: var(--amber); }
-  .card h3 { font-size: 19px; font-weight: 700; margin-bottom: 18px; }
-  .card .meta { margin: -10px 0 18px; font-size: 14px; font-weight: 700; color: var(--eyebrow); }
-  .card.wide { grid-column: 1 / -1; }
-  .card.wide .secs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 31px; }
-  @media (max-width: 860px) { .card.wide .secs { grid-template-columns: 1fr; gap: 0; } }
-  .sec { margin-bottom: 18px; }
-  .sec:last-child { margin-bottom: 0; }
-  .sec h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
-  .sec p { margin: 0; }
-  .pills { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
-  .pills li { background: var(--pill); border: 1px solid var(--pill-border); color: var(--pill-text); font-size: 13px; font-weight: 700; padding: 5px 12px; border-radius: 999px; }
-  .bullets { margin: 12px 0 18px; padding-left: 18px; }
-  .sub-title { font-size: 28px; font-weight: 700; margin: 64px 0 30px; }
+/* Type */
+.pj .eyebrow { color: var(--eyebrow); font-weight: 700; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 8px; }
+.pj .title { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -.01em; }
+.pj .rule { width: 48px; height: 5px; border-radius: 3px; background: var(--amber); margin: 14px 0 40px; transform-origin: 0 50%; }
+.pj .sub-title { font-size: 28px; font-weight: 800; margin: 72px 0 30px; }
 
-  /* About */
-  .about { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: start; }
-  @media (max-width: 860px) { .about { grid-template-columns: 1fr; } }
-  .facts dt { color: var(--text); font-weight: 700; font-size: 17px; }
-  .facts dd { margin: 0 0 16px; font-weight: 600; font-size: 17px; }
-  .about h3 { font-size: 18px; margin: 8px 0 12px; }
-  .about .chips li { background: var(--card); font-size: 15px; color: var(--pill-text); }
-  [data-theme="light"] .about .chips li { background: var(--pill); }
-  .profile p { font-size: 17px; line-height: 1.6; margin: 0; }
-  .profile .eyebrow { margin-bottom: 14px; }
+/* Hero */
+.pj .hero { padding: 96px 0 120px; overflow: hidden; }
+.pj .hero .glow { position: absolute; width: 560px; height: 560px; left: 0; top: 0; border-radius: 50%; background: radial-gradient(circle, var(--glow), transparent 65%); pointer-events: none; transform: translate(var(--gx, 60vw), var(--gy, -120px)); transition: transform .9s cubic-bezier(.2,.8,.2,1); }
+.pj .hero .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: center; }
+.pj .hero h1 { font-size: clamp(44px, 7vw, 76px); font-weight: 800; letter-spacing: -.02em; line-height: 1.05; }
+.pj .hero h1 .ch { display: inline-block; animation: pj-rise .9s cubic-bezier(.2,.9,.25,1.15) both; animation-delay: calc(var(--i) * 45ms + 120ms); }
+.pj .hero h1 .ch:hover { color: var(--amber); transform: translateY(-6px) rotate(-4deg); transition: transform .25s, color .25s; }
+@keyframes pj-rise { from { transform: translateY(70%) rotate(8deg) scale(.9); } to { transform: none; } }
+.pj .hero .role { color: var(--sub); font-size: clamp(18px, 2.2vw, 24px); font-weight: 700; margin: 14px 0 18px; min-height: 1.4em; }
+.pj .hero .role .typed { border-right: 3px solid var(--amber); padding-right: 4px; animation: pj-caret 1s steps(1) infinite; }
+@keyframes pj-caret { 50% { border-color: transparent; } }
+.pj .hero .lead { font-size: 18px; max-width: 620px; }
+.pj .chips { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0; padding: 0; list-style: none; }
+.pj .chips li { background: var(--chip); color: var(--text); border: 1px solid var(--pill-border); padding: 10px 18px; border-radius: 999px; font-weight: 700; font-size: 15px; transition: transform .35s cubic-bezier(.3,1.6,.5,1), background .25s; cursor: default; }
+.pj .chips li:hover { transform: translateY(-4px) scale(1.06); }
+.pj .chips li.hl { background: var(--amber); color: #0B1F3A; border-color: var(--amber); }
+.pj .hero .chips li { animation: pj-pop .7s cubic-bezier(.3,1.6,.5,1) both; animation-delay: calc(var(--i) * 110ms + 700ms); }
+@keyframes pj-pop { from { transform: scale(.4); } to { transform: none; } }
+.pj .ctas { display: flex; flex-wrap: wrap; gap: 14px; }
 
-  /* Experience */
-  .exp-head { margin-bottom: 8px; font-size: 22px; }
-  .exp-meta { color: var(--eyebrow); font-weight: 700; margin: 0 0 16px; }
-  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 24px; }
-  @media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
-  .two ul { margin: 8px 0 0; padding-left: 18px; }
+/* Bespoke CTAs */
+.pj .cta-talk { position: relative; display: inline-flex; align-items: center; gap: 10px; padding: 15px 28px; border-radius: 999px; background: var(--btn); color: #fff; font-weight: 700; font-size: 17px; text-decoration: none; overflow: hidden; transition: box-shadow .3s; }
+.pj .cta-talk::before { content: ""; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%); transform: translateX(-120%); transition: transform .8s; }
+.pj .cta-talk:hover::before { transform: translateX(120%); }
+.pj .cta-talk:hover { box-shadow: 0 12px 30px -8px rgba(37,99,235,.7); }
+.pj .cta-talk .arr { display: inline-block; transition: transform .3s; }
+.pj .cta-talk:hover .arr { transform: translateX(5px); }
+.pj .cta-work { display: inline-flex; align-items: center; gap: 10px; padding: 13px 24px; border-radius: 999px; border: 2px dashed var(--ghost-border); color: var(--ghost-text); font-weight: 700; font-size: 17px; text-decoration: none; transition: border-style .2s, background .3s; }
+.pj .cta-work:hover { border-style: solid; background: var(--pill); }
+.pj .cta-work .down { display: inline-block; animation: pj-bob 1.6s ease-in-out infinite; }
+@keyframes pj-bob { 50% { transform: translateY(4px); } }
 
-  /* Highlights */
-  .hl-card .tag { color: var(--eyebrow); font-size: 13px; font-weight: 700; letter-spacing: .06em; }
-  .hl-card h3 { margin: 6px 0 10px; }
+/* Photo with orbit */
+.pj .photo-stage { position: relative; justify-self: center; width: min(340px, 78vw); aspect-ratio: 330 / 386; }
+.pj .photo { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+.pj .photo::before { content: ""; position: absolute; inset: 20px -20px -20px 20px; background: var(--amber); border-radius: 28px; transform: translateZ(-30px); }
+.pj .photo img { position: relative; width: 100%; height: 100%; object-fit: cover; border-radius: 28px; display: block; box-shadow: var(--shadow); }
+.pj .orbit { z-index: 2; position: absolute; inset: -46px; border-radius: 50%; border: 1.5px dashed var(--pill-border); animation: pj-spin 38s linear infinite; pointer-events: none; }
+.pj .orbit .sat { position: absolute; width: 48px; height: 48px; margin: -24px; border-radius: 14px; display: grid; place-items: center; background: var(--card); border: 1px solid var(--pill-border); color: var(--bar); box-shadow: var(--shadow); animation: pj-spin 38s linear infinite reverse; }
+.pj .orbit .sat svg { width: 24px; height: 24px; }
+.pj .orbit .sat.am { color: var(--amber); }
+.pj .orbit .s1 { left: 50%; top: 0; } .pj .orbit .s2 { left: 100%; top: 50%; } .pj .orbit .s3 { left: 50%; top: 100%; } .pj .orbit .s4 { left: 0; top: 50%; }
+@keyframes pj-spin { to { transform: rotate(360deg); } }
+@media (max-width: 860px) { .pj .hero .wrap { grid-template-columns: 1fr; } .pj .photo-stage { order: -1; margin: 30px auto 20px; width: min(260px, 64vw); } }
 
-  /* Contact */
-  .cta { position: relative; overflow: hidden; background: var(--cta-bg); border-radius: 32px; padding: 56px 28px; text-align: center; color: #E0E7FF; }
-  .cta h2 { color: #FFFFFF; font-size: clamp(24px, 3.4vw, 36px); max-width: 760px; margin: 8px auto 12px; }
-  .cta .eyebrow { color: #FDE68A; }
-  .cta .btn.white { background: #FFFFFF; color: #1D4ED8; margin: 20px 0 16px; }
-  .cta .row { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
-  .cta .btn.outline { border-color: #93C5FD; color: #FFFFFF; background: rgba(11,31,58,.35); padding: 10px 22px; font-size: 15px; }
-  .cta .small { margin-top: 20px; font-size: 15px; }
-  .cta .small a { color: #FFFFFF; }
-  footer { text-align: center; color: var(--muted); font-size: 14px; padding: 28px 0 40px; }
+/* Marquee */
+.pj .marquee { position: relative; z-index: 1; overflow: hidden; border-block: 1px solid var(--card-border); background: var(--bg2); padding: 16px 0; transform: rotate(-1.2deg) scale(1.02); }
+.pj .marquee .track { display: flex; gap: 14px; width: max-content; animation: pj-marquee 40s linear infinite; }
+.pj .marquee:hover .track { animation-play-state: paused; }
+.pj .marquee span { white-space: nowrap; font-weight: 700; font-size: 15px; color: var(--pill-text); background: var(--pill); border: 1px solid var(--pill-border); border-radius: 999px; padding: 7px 16px; }
+.pj .marquee span.am { background: var(--amber); color: #0B1F3A; border-color: var(--amber); }
+@keyframes pj-marquee { to { transform: translateX(-50%); } }
+
+/* Reveal (transform-led; never hides content) */
+.pj .rv { transition: transform .9s cubic-bezier(.2,.8,.2,1), opacity .9s ease; }
+.pj.motion .rv:not(.in) { transform: translateY(46px) scale(.97); opacity: .25; }
+.pj.motion .rule:not(.in) { transform: scaleX(0); }
+.pj .rule { transition: transform 1s cubic-bezier(.2,.9,.2,1) .2s; }
+.pj.motion .rv:not(.in) .pills li { transform: scale(.3) translateY(10px); }
+.pj .pills li { transition: transform .55s cubic-bezier(.3,1.7,.5,1), background .25s, color .25s; transition-delay: calc(var(--i, 0) * 60ms + 250ms); }
+
+/* Cards */
+.pj .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+.pj .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 29px; }
+@media (max-width: 960px) { .pj .grid3 { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .pj .grid2 { grid-template-columns: 1fr; } }
+.pj .card { position: relative; background: var(--card); border: 1px solid var(--card-border); border-radius: 24px; padding: 28px; box-shadow: var(--shadow); transform-style: preserve-3d; }
+.pj .card.tilt { transition: transform .9s cubic-bezier(.2,.8,.2,1), opacity .9s ease, box-shadow .3s; }
+.pj .card.tilt.hovering { transition: transform .12s linear, box-shadow .3s; }
+.pj .card::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--mx, -999px) var(--my, -999px), var(--glare), transparent 45%); }
+.pj .card .bar { display: block; width: 36px; height: 5px; border-radius: 3px; background: var(--bar); margin-bottom: 12px; transition: width .5s cubic-bezier(.3,1.4,.5,1); }
+.pj .card:hover .bar { width: 72px; }
+.pj .card.amber .bar { background: var(--amber); }
+.pj .card h3 { font-size: 19px; font-weight: 700; margin-bottom: 18px; }
+.pj .card h3 .num { display: inline-grid; place-items: center; min-width: 38px; height: 30px; padding: 0 8px; margin-right: 8px; border-radius: 10px; background: var(--pill); color: var(--pill-text); font-size: 14px; font-weight: 800; vertical-align: 2px; transition: transform .4s cubic-bezier(.3,1.6,.5,1), background .3s, color .3s; }
+.pj .card:hover h3 .num { transform: rotate(-8deg) scale(1.12); background: var(--amber); color: #0B1F3A; }
+.pj .card .meta { margin: -10px 0 18px; font-size: 14px; font-weight: 700; color: var(--eyebrow); }
+.pj .card.wide { grid-column: 1 / -1; }
+.pj .card.wide .secs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 31px; }
+@media (max-width: 860px) { .pj .card.wide .secs { grid-template-columns: 1fr; gap: 0; } }
+.pj .sec { margin-bottom: 18px; }
+.pj .secs { margin-bottom: 18px; }
+.pj .sec:last-child { margin-bottom: 0; }
+.pj .sec h4 { font-size: 15px; font-weight: 800; margin-bottom: 4px; }
+.pj .sec p { margin: 0; }
+.pj .pills { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.pj .pills li { background: var(--pill); border: 1px solid var(--pill-border); color: var(--pill-text); font-size: 13px; font-weight: 700; padding: 5px 12px; border-radius: 999px; cursor: default; }
+.pj .pills li:hover { background: var(--amber); border-color: var(--amber); color: #0B1F3A; transform: translateY(-3px) rotate(-3deg) scale(1.08); transition-delay: 0s; }
+.pj .bullets { margin: 12px 0 18px; padding-left: 18px; }
+
+/* About */
+.pj .about { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: center; }
+@media (max-width: 860px) { .pj .about { grid-template-columns: 1fr; } }
+.pj .facts dt { color: var(--text); font-weight: 700; font-size: 17px; }
+.pj .facts dd { margin: 0 0 16px; font-weight: 600; font-size: 17px; }
+.pj .about h3 { font-size: 18px; margin: 8px 0 12px; }
+.pj .about .chips li { background: var(--card); font-size: 15px; color: var(--pill-text); }
+.pj[data-mode="light"] .about .chips li { background: var(--pill); }
+.pj .about .chips li:hover { background: var(--amber); color: #0B1F3A; border-color: var(--amber); }
+.pj .profile p { font-size: 17px; line-height: 1.65; margin: 0; }
+.pj .profile .eyebrow { margin-bottom: 14px; }
+
+/* Experience */
+.pj .exp-head { margin-bottom: 8px; font-size: 22px !important; }
+.pj .exp-meta { color: var(--eyebrow); font-weight: 700; margin: 0 0 16px; }
+.pj .two { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 24px; }
+@media (max-width: 860px) { .pj .two { grid-template-columns: 1fr; } }
+.pj .two ul { margin: 8px 0 0; padding-left: 18px; }
+.pj .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 10px; }
+.pj .stat { background: var(--pill); border: 1px solid var(--pill-border); border-radius: 18px; padding: 14px 16px; transition: transform .4s cubic-bezier(.3,1.6,.5,1); }
+.pj .stat:hover { transform: translateY(-4px) rotate(-1deg); }
+.pj .stat b { display: block; font-size: 30px; font-weight: 800; color: var(--text); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.pj .stat b em { font-style: normal; color: var(--amber); }
+.pj .stat .lbl { font-size: 13.5px; color: var(--body); line-height: 1.4; display: block; margin-top: 4px; }
+
+/* Work timeline rail */
+.pj .rail { position: absolute; left: -2px; top: 0; bottom: 0; width: 3px; border-radius: 3px; background: var(--card-border); }
+.pj .rail i { position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(var(--bar), var(--amber)); transform-origin: 50% 0; transform: scaleY(var(--fill, 0)); }
+@media (max-width: 1180px) { .pj .rail { display: none; } }
+
+/* Highlights */
+.pj .hl-card .tag { color: var(--eyebrow); font-size: 13px; font-weight: 700; letter-spacing: .06em; margin-bottom: 0; }
+.pj .hl-card h3 { margin: 6px 0 10px; }
+.pj .hl-card .ic { position: absolute; right: 22px; top: 22px; width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: var(--pill); color: var(--bar); transition: transform .6s cubic-bezier(.3,1.6,.5,1); }
+.pj .hl-card:hover .ic { transform: rotate(14deg) scale(1.12); }
+.pj .hl-card .ic svg { width: 24px; height: 24px; }
+
+/* Contact */
+.pj .cta { position: relative; overflow: hidden; background: var(--cta-bg); border-radius: 32px; padding: 64px 28px; text-align: center; color: #E0E7FF; }
+.pj .cta .bub { position: absolute; border-radius: 50%; background: rgba(255,255,255,.08); pointer-events: none; will-change: transform; }
+.pj .cta .bub.a { width: 220px; height: 220px; left: -60px; top: -80px; }
+.pj .cta .bub.b { width: 140px; height: 140px; right: 8%; bottom: -50px; background: rgba(245,158,11,.28); }
+.pj .cta .bub.c { width: 70px; height: 70px; right: 22%; top: 30px; border: 2px solid rgba(255,255,255,.25); background: none; }
+.pj .cta > *:not(.bub) { position: relative; }
+.pj .cta h2 { color: #FFFFFF; font-size: clamp(24px, 3.4vw, 38px); max-width: 760px; margin: 8px auto 12px; }
+.pj .cta .eyebrow { color: #FDE68A; }
+.pj .cta-mail { display: inline-flex; align-items: center; gap: 10px; margin: 20px 0 16px; padding: 15px 30px; border-radius: 999px; background: #FFFFFF; color: #1D4ED8; font-weight: 800; font-size: 17px; text-decoration: none; will-change: transform; transition: box-shadow .3s; }
+.pj .cta-mail:hover { box-shadow: 0 0 0 8px rgba(255,255,255,.18); }
+.pj .cta .row { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+.pj .cta-li, .pj .cta-cv { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 14px; font-weight: 700; font-size: 15px; text-decoration: none; color: #FFFFFF; }
+.pj .cta-li { background: rgba(11,31,58,.35); border: 1.5px solid #93C5FD; transition: transform .35s cubic-bezier(.3,1.6,.5,1), background .25s; }
+.pj .cta-li:hover { transform: translateY(-3px); background: #0A66C2; border-color: #0A66C2; }
+.pj .cta-cv { background: none; border: 1.5px solid #FDE68A; color: #FDE68A; transition: background .25s, color .25s; }
+.pj .cta-cv:hover { background: #FDE68A; color: #0B1F3A; }
+.pj .cta .small { margin: 22px 0 0; font-size: 15px; }
+.pj .cta .small a { color: #FFFFFF; }
+.pj footer { text-align: center; color: var(--muted); font-size: 14px; padding: 28px 0 40px; }
+
+/* Back to top */
+.pj .top-btn { position: fixed; right: 20px; bottom: 20px; z-index: 25; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--pill-border); background: var(--card); color: var(--text); display: grid; place-items: center; cursor: pointer; box-shadow: var(--shadow); transform: translateY(90px); transition: transform .5s cubic-bezier(.3,1.5,.5,1); }
+.pj .top-btn.show { transform: none; }
+.pj .top-btn svg { position: absolute; inset: -1px; width: 48px; height: 48px; transform: rotate(-90deg); }
+.pj .top-btn circle { fill: none; stroke: var(--amber); stroke-width: 3; stroke-dasharray: 141.4; stroke-dashoffset: calc(141.4 * (1 - var(--p, 0))); }
+
+@media (prefers-reduced-motion: reduce) {
+  .pj *, .pj *::before, .pj *::after { animation: none !important; transition: none !important; }
+  .pj .fl { transform: none !important; }
+}
+
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
 </style>
 </head>
 <body>
+<div class="pj" data-mode="dark" id="pj">
+<script>(function(){var t=null;try{t=localStorage.getItem('theme')}catch(e){}if(!t)t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.getElementById('pj').setAttribute('data-mode',t);document.body.style.background=t==='light'?'#F8FAFC':'#0B1F3A';})();</script>
+<div class="progress" aria-hidden="true"></div>
+<div class="floaters" aria-hidden="true"></div>
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#top">Pranshu Jain</a>
+    <a class="brand" href="#top"><span class="mono">PJ</span>Pranshu Jain</a>
     <nav aria-label="Main">
+      <span class="indicator" aria-hidden="true"></span>
       <a class="link" href="#about">About</a>
       <a class="link" href="#experience">Experience</a>
       <a class="link" href="#work">Work</a>
       <a class="link" href="#projects">Projects</a>
       <a class="link" href="#contact">Contact</a>
-      <button class="toggle" id="themeToggle" type="button" aria-label="Toggle dark and light mode" title="Toggle dark / light mode">
+      <button class="toggle" type="button" data-theme-toggle aria-label="Toggle dark and light mode" title="Toggle dark / light mode">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       </button>
@@ -157,30 +269,31 @@
 </header>
 
 <main id="top">
-  <section class="hero">
-    <span class="blob b1"></span><span class="blob b2"></span>
+  <section class="hero" data-section="top">
+    <span class="glow" aria-hidden="true"></span>
     <div class="wrap">
       <div>
         <p class="eyebrow">Hello, I'm glad you're here</p>
-        <h1>Pranshu Jain</h1>
-        <p class="role">Product Manager · Fintech Lending</p>
+        <h1 aria-label="Pranshu Jain"><span style="white-space:nowrap"><span class="ch" style="--i:0">P</span><span class="ch" style="--i:1">r</span><span class="ch" style="--i:2">a</span><span class="ch" style="--i:3">n</span><span class="ch" style="--i:4">s</span><span class="ch" style="--i:5">h</span><span class="ch" style="--i:6">u</span></span> <span style="white-space:nowrap"><span class="ch" style="--i:10">J</span><span class="ch" style="--i:11">a</span><span class="ch" style="--i:12">i</span><span class="ch" style="--i:13">n</span></span></h1>
+        <p class="role"><span class="typed" data-typer>Product Manager · Fintech Lending</span></p>
         <p class="lead">I build ideas 0 → 1 and scale them 1 → 100, making data-backed decisions through rigorous market research and benchmarking, with hands-on experience in data science and quantitative analysis.</p>
-        <ul class="chips"><li class="hl">Product Manager</li><li>Fintech</li><li>B.Tech · IIT Delhi</li></ul>
+        <ul class="chips"><li class="hl" style="--i:0">Product Manager</li><li style="--i:1">Fintech</li><li style="--i:2">B.Tech · IIT Delhi</li></ul>
         <div class="ctas">
-          <a class="btn primary" href="mailto:pranshuc01@gmail.com">Let's talk →</a>
-          <a class="btn ghost" href="assets/Pranshu_Jain_CV.pdf" download>Download résumé</a>
+          <a class="cta-talk" data-magnetic href="mailto:pranshuc01@gmail.com">Let's talk <span class="arr">→</span></a>
+          <a class="cta-work" href="#work">See my work <span class="down">↓</span></a>
         </div>
       </div>
-      <div class="photo"><img src="assets/pranshu.jpg" alt="Portrait of Pranshu Jain"></div>
+      <div class="photo-stage" data-parallax="-0.08">
+        <div class="photo" data-photo-tilt><img src="assets/pranshu.jpg" alt="Portrait of Pranshu Jain"></div>
+      </div>
     </div>
   </section>
 
-  <section id="about">
+  <section id="about" data-section="about">
     <div class="wrap">
-      <p class="eyebrow">About me</p>
-      <h2 class="title">A product builder</h2><div class="rule"></div>
+      <div class="rv"><p class="eyebrow">About me</p><h2 class="title">Product Builder</h2><div class="rule"></div></div>
       <div class="about">
-        <div>
+        <div class="rv">
           <dl class="facts">
             <dt>Location</dt><dd>Pune, Maharashtra</dd>
             <dt>Education</dt><dd>B.Tech, Production and Industrial Engineering<br>IIT Delhi · 2024</dd>
@@ -188,7 +301,7 @@
           <h3>Interests &amp; strengths</h3>
           <ul class="chips"><li>Basketball &amp; Tennis</li><li>Data Analytics</li><li>Finance</li><li>Problem Solving</li><li>Product Development</li><li>Market Research &amp; Benchmarking</li><li>Leadership</li></ul>
         </div>
-        <div class="card profile">
+        <div class="card profile rv tilt">
           <p class="eyebrow">Profile</p>
           <p>Product Manager with 2 years of hands-on experience researching, building and scaling fintech lending products at Jio Credit, a Jio Financial Services entity. I have owned products end to end, including core lending systems (LOS and LMS), distribution and structured credit transactions, directly shaping AUM growth, disbursal velocity and operational efficiency. An IIT Delhi engineer with a quantitative foundation in financial modelling, stochastic systems and data science, looking to bring product thinking, domain depth and technical fluency to a high-ownership PM role.</p>
         </div>
@@ -196,11 +309,10 @@
     </div>
   </section>
 
-  <section id="experience">
+  <section id="experience" data-section="experience">
     <div class="wrap">
-      <p class="eyebrow">Experience</p>
-      <h2 class="title">Where I've worked</h2><div class="rule"></div>
-      <article class="card">
+      <div class="rv"><p class="eyebrow">Experience</p><h2 class="title">Where I've worked</h2><div class="rule"></div></div>
+      <article class="card rv">
         <span class="bar"></span>
         <h3 class="exp-head">Product Manager, MD &amp; CEO's Office</h3>
         <p class="exp-meta">Jio Credit Limited (Jio Financial Services) · Aug 2024 – Sep 2026 · Mumbai</p>
@@ -210,7 +322,12 @@
             <ul><li>Business Planning Manager to the MD &amp; CEO</li><li>Loan Against Property (LAP): strategy, tech and processes</li><li>Direct Assignment (DA): product and transactions</li><li>Channel distribution (DSA network)</li><li>Banking system architecture: LOS, LMS, Lead Management System, Customer Servicing Portal</li><li>New product initiatives</li></ul>
           </div>
           <div class="sec"><h4>Impact at a glance</h4>
-            <ul><li>LAP launched in 4 weeks, without a LAP-specific LOS journey</li><li>10 Direct Assignment transactions closed by end of FY25</li><li>530+ DSAs onboarded across 20 locations</li><li>60% faster disbursals: 15 days to 6 days</li></ul>
+            <div class="stats">
+              <div class="stat"><b><span data-count="4">4</span> weeks</b><span class="lbl">LAP launched, without a LAP-specific LOS journey</span></div>
+              <div class="stat"><b><span data-count="10">10</span></b><span class="lbl">Direct Assignment transactions closed by end of FY25</span></div>
+              <div class="stat"><b><span data-count="530">530</span><em>+</em></b><span class="lbl">DSAs onboarded across 20 locations</span></div>
+              <div class="stat"><b><span data-count="60">60</span><em>%</em></b><span class="lbl">faster disbursals: 15 days to 6 days</span></div>
+            </div>
           </div>
         </div>
         <div class="sec" style="margin-top:18px"><h4>Core skills</h4>
@@ -220,73 +337,70 @@
     </div>
   </section>
 
-  <section id="work">
+  <section id="work" data-section="work">
     <div class="wrap">
-      <p class="eyebrow">Work</p>
-      <h2 class="title">Case studies from Jio Credit</h2><div class="rule"></div>
-      <div class="grid2"><article class="card "><span class="bar"></span><h3>01  Business Planning Manager to the MD &amp; CEO</h3>
-<div class="secs"><div class="sec"><h4>Objective</h4><p>Identify the projects that needed leadership attention for the next financial year and drive them to completion with clear ownership.</p></div><div class="sec"><h4>Approach</h4><p>Collated proposed projects from all CXOs and their direct reports, shortlisted them against the issues faced on the floor, and hosted the Annual Strategy Meet (Jan 2025, Jan 2026). Ran the portfolio as the CEO&#x27;s project manager, unblocked teams cross-functionally, and authored the FY26 Annual Operating Plan.</p></div><div class="sec"><h4>Outcome</h4><p>2 annual strategy cycles run end to end. The FY26 AOP set the growth roadmap through product and market expansion, spanning new products, Customer 360, credit enhancements and automated regulatory reporting.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Strategic planning</li><li>Portfolio prioritisation</li><li>Program management</li><li>CXO stakeholder management</li></ul></div></article><article class="card "><span class="bar"></span><h3>02  Loan Against Property (LAP) launch</h3>
-<div class="secs"><div class="sec"><h4>Objective</h4><p>Launch the LAP product within 4 weeks, without a LAP-specific journey in the LOS.</p></div><div class="sec"><h4>Approach</h4><p>Adapted an existing LOS flow rather than building from scratch. Wrote BRDs and SOPs for Sales, Credit and Operations, and LMS BRDs for servicing, top-ups, mandate-based repayment reconciliation, part payment, closure, GL and bank reconciliation. Covered gaps outside the flow with Google Sheets and Apps Script workflows.</p></div><div class="sec"><h4>Outcome</h4><p>LAP launched on time in September 2024, with every journey step covered from day one and manual gaps contained in auditable workflows.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>0→1 launch</li><li>BRD and SOP writing</li><li>Scope trade-offs</li><li>Apps Script automation</li></ul></div></article><article class="card "><span class="bar"></span><h3>03  LAP journey enhancements</h3>
-<div class="secs"><div class="sec"><h4>Problem</h4><p>Post-launch, the mortgage journey had redundant steps, pages and fields; due diligence was largely manual, raising TATs and errors.</p></div><div class="sec"><h4>Approach</h4><p>Audited the live journey and removed redundant steps, integrated 8 APIs into the sales LOS journey for automated due diligence, added upfront rejection of ineligible customers, and automated sanction letter and loan agreement generation.</p></div><div class="sec"><h4>Outcome</h4><p>Sourcing-to-disbursal TAT cut 60%, from 15 days to 6 days, with fewer manual errors and less rework for credit and ops.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Funnel analysis</li><li>API integration</li><li>Journey redesign</li><li>TAT optimisation</li></ul></div></article><article class="card "><span class="bar"></span><h3>04  Direct Assignment (DA) transactions</h3>
-<div class="secs"><div class="sec"><h4>Objective</h4><p>Scale AUM faster than organic disbursals allowed by acquiring loan pools through DA.</p></div><div class="sec"><h4>Approach</h4><p>Ran DA transactions end to end: sourcing, due diligence and negotiations with originators. Integrated deals into internal systems to track repayments and reconcile payouts.</p></div><div class="sec"><h4>Outcome</h4><p>10 DA transactions closed by end of FY25, building a significant part of the loan book.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Structured credit</li><li>Deal negotiation</li><li>Due diligence</li><li>Apps Script automation</li></ul></div></article><article class="card "><span class="bar"></span><h3>05  DA payout reconciliation fix</h3>
-<div class="secs"><div class="sec"><h4>Problem</h4><p>Finance flagged mismatches between DA payout files and bank reconciliation across transactions.</p></div><div class="sec"><h4>Approach</h4><p>Traced the root cause: originator collection dates differed from JCL&#x27;s receipt dates, and both originator and JCL share files were kept in the system. Moved to a single JCL-share file in the LMS, built a Google Sheets calculator for part payments and rate changes, and wrote a Python validator to check originator data before upload.</p></div><div class="sec"><h4>Outcome</h4><p>A single source of truth for DA accounting, with duplicate file maintenance removed from operations.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Root-cause analysis</li><li>Financial reconciliation</li><li>Process redesign</li><li>Python</li></ul></div></article><article class="card "><span class="bar"></span><h3>06  DSA channel distribution network</h3>
-<div class="secs"><div class="sec"><h4>Problem</h4><p>No structured channel to source mortgage customers at scale; onboarding needed Sales, Risk and Finance aligned.</p></div><div class="sec"><h4>Approach</h4><p>Aligned Sales, Risk and Finance on one DSA onboarding process and SOP. Drafted the BRD for a partner portal (self-onboarding, payout reconciliation, real-time case status) and built an interim Apps Script flow for onboarding, agreement signing, RCU checks and ERP finance onboarding.</p></div><div class="sec"><h4>Outcome</h4><p>500+ retail and 30+ corporate DSAs onboarded across 20 locations, making DSAs the primary sourcing channel for mortgage disbursals.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Go-to-market</li><li>Channel strategy</li><li>Partner portal design</li><li>Workflow automation</li></ul></div></article><article class="card wide"><span class="bar"></span><h3>07  LRD escrow accounts</h3>
+      <div class="rail" aria-hidden="true"><i></i></div>
+      <div class="rv"><p class="eyebrow">Work</p><h2 class="title">Case studies from Jio Credit</h2><div class="rule"></div></div>
+      <div class="grid2"><article class="card rv tilt "><span class="bar"></span><h3><span class="num">01</span>Business Planning Manager to the MD &amp; CEO</h3>
+<div class="secs"><div class="sec"><h4>Objective</h4><p>Identify the projects that needed leadership attention for the next financial year and drive them to completion with clear ownership.</p></div><div class="sec"><h4>Approach</h4><p>Collated proposed projects from all CXOs and their direct reports, shortlisted them against the issues faced on the floor, and hosted the Annual Strategy Meet (Jan 2025, Jan 2026). Ran the portfolio as the CEO&#x27;s project manager, unblocked teams cross-functionally, and authored the FY26 Annual Operating Plan.</p></div><div class="sec"><h4>Outcome</h4><p>2 annual strategy cycles run end to end. The FY26 AOP set the growth roadmap through product and market expansion, spanning new products, Customer 360, credit enhancements and automated regulatory reporting.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Strategic planning</li><li>Portfolio prioritisation</li><li>Program management</li><li>CXO stakeholder management</li></ul></div></article><article class="card rv tilt "><span class="bar"></span><h3><span class="num">02</span>Loan Against Property (LAP) launch</h3>
+<div class="secs"><div class="sec"><h4>Objective</h4><p>Launch the LAP product within 4 weeks, without a LAP-specific journey in the LOS.</p></div><div class="sec"><h4>Approach</h4><p>Adapted an existing LOS flow rather than building from scratch. Wrote BRDs and SOPs for Sales, Credit and Operations, and LMS BRDs for servicing, top-ups, mandate-based repayment reconciliation, part payment, closure, GL and bank reconciliation. Covered gaps outside the flow with Google Sheets and Apps Script workflows.</p></div><div class="sec"><h4>Outcome</h4><p>LAP launched on time in September 2024, with every journey step covered from day one and manual gaps contained in auditable workflows.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>0→1 launch</li><li>BRD and SOP writing</li><li>Scope trade-offs</li><li>Apps Script automation</li></ul></div></article><article class="card rv tilt "><span class="bar"></span><h3><span class="num">03</span>LAP journey enhancements</h3>
+<div class="secs"><div class="sec"><h4>Problem</h4><p>Post-launch, the mortgage journey had redundant steps, pages and fields; due diligence was largely manual, raising TATs and errors.</p></div><div class="sec"><h4>Approach</h4><p>Audited the live journey and removed redundant steps, integrated 8 APIs into the sales LOS journey for automated due diligence, added upfront rejection of ineligible customers, and automated sanction letter and loan agreement generation.</p></div><div class="sec"><h4>Outcome</h4><p>Sourcing-to-disbursal TAT cut 60%, from 15 days to 6 days, with fewer manual errors and less rework for credit and ops.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Funnel analysis</li><li>API integration</li><li>Journey redesign</li><li>TAT optimisation</li></ul></div></article><article class="card rv tilt "><span class="bar"></span><h3><span class="num">04</span>Direct Assignment (DA) transactions</h3>
+<div class="secs"><div class="sec"><h4>Objective</h4><p>Scale AUM faster than organic disbursals allowed by acquiring loan pools through DA.</p></div><div class="sec"><h4>Approach</h4><p>Ran DA transactions end to end: sourcing, due diligence and negotiations with originators. Integrated deals into internal systems to track repayments and reconcile payouts.</p></div><div class="sec"><h4>Outcome</h4><p>10 DA transactions closed by end of FY25, building a significant part of the loan book.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Structured credit</li><li>Deal negotiation</li><li>Due diligence</li><li>Apps Script automation</li></ul></div></article><article class="card rv tilt "><span class="bar"></span><h3><span class="num">05</span>DA payout reconciliation fix</h3>
+<div class="secs"><div class="sec"><h4>Problem</h4><p>Finance flagged mismatches between DA payout files and bank reconciliation across transactions.</p></div><div class="sec"><h4>Approach</h4><p>Traced the root cause: originator collection dates differed from JCL&#x27;s receipt dates, and both originator and JCL share files were kept in the system. Moved to a single JCL-share file in the LMS, built a Google Sheets calculator for part payments and rate changes, and wrote a Python validator to check originator data before upload.</p></div><div class="sec"><h4>Outcome</h4><p>A single source of truth for DA accounting, with duplicate file maintenance removed from operations.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Root-cause analysis</li><li>Financial reconciliation</li><li>Process redesign</li><li>Python</li></ul></div></article><article class="card rv tilt "><span class="bar"></span><h3><span class="num">06</span>DSA channel distribution network</h3>
+<div class="secs"><div class="sec"><h4>Problem</h4><p>No structured channel to source mortgage customers at scale; onboarding needed Sales, Risk and Finance aligned.</p></div><div class="sec"><h4>Approach</h4><p>Aligned Sales, Risk and Finance on one DSA onboarding process and SOP. Drafted the BRD for a partner portal (self-onboarding, payout reconciliation, real-time case status) and built an interim Apps Script flow for onboarding, agreement signing, RCU checks and ERP finance onboarding.</p></div><div class="sec"><h4>Outcome</h4><p>500+ retail and 30+ corporate DSAs onboarded across 20 locations, making DSAs the primary sourcing channel for mortgage disbursals.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Go-to-market</li><li>Channel strategy</li><li>Partner portal design</li><li>Workflow automation</li></ul></div></article><article class="card rv tilt wide"><span class="bar"></span><h3><span class="num">07</span>LRD escrow accounts</h3>
 <div class="secs"><div class="sec"><h4>Problem</h4><p>Escrow accounts for LRD transactions took 60–90 days to open, delaying disbursals.</p></div><div class="sec"><h4>Approach</h4><p>Designed a pooled escrow structure in place of per-deal accounts and partnered with banks to operationalise it.</p></div><div class="sec"><h4>Outcome</h4><p>Escrow account opening cut by ~66%, from 90 days to ~30 days.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Bank partnerships</li><li>Solution design</li><li>Process innovation</li></ul></div></article></div>
-      <h2 class="sub-title">Earlier experience</h2>
-      <div class="grid2"><article class="card amber"><span class="bar"></span><h3>Quant Analyst Intern — Futures First</h3><p class="meta">May 2023 – Jul 2023  ·  Global derivatives trading</p>
-<div class="secs"><div class="sec"><h4>Objective</h4><p>Explain and anticipate shifts in the Eurodollar yield curve to support trading decisions.</p></div><div class="sec"><h4>Approach</h4><p>Mapped yield curve shifts to market developments, implemented 4 interest rate models (Vasicek, Cox-Ingersoll-Ross, Heath-Jarrow-Morton, Hull-White) to plot forward curves, and built vectorised backtesting in Pandas.</p></div><div class="sec"><h4>Outcome</h4><p>Backtested model used to generate trading signals.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Stochastic modelling</li><li>Fixed income</li><li>Backtesting</li><li>Python and Pandas</li></ul></div></article><article class="card amber"><span class="bar"></span><h3>Data Scientist Intern — Ripik.AI</h3><p class="meta">Apr 2022 – Jul 2022  ·  Industrial optimisation through AI/ML</p>
+      <h2 class="sub-title rv">Earlier experience</h2>
+      <div class="grid2"><article class="card rv tilt amber"><span class="bar"></span><h3>Quant Analyst Intern — Futures First</h3><p class="meta">May 2023 – Jul 2023  ·  Global derivatives trading</p>
+<div class="secs"><div class="sec"><h4>Objective</h4><p>Explain and anticipate shifts in the Eurodollar yield curve to support trading decisions.</p></div><div class="sec"><h4>Approach</h4><p>Mapped yield curve shifts to market developments, implemented 4 interest rate models (Vasicek, Cox-Ingersoll-Ross, Heath-Jarrow-Morton, Hull-White) to plot forward curves, and built vectorised backtesting in Pandas.</p></div><div class="sec"><h4>Outcome</h4><p>Backtested model used to generate trading signals.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Stochastic modelling</li><li>Fixed income</li><li>Backtesting</li><li>Python and Pandas</li></ul></div></article><article class="card rv tilt amber"><span class="bar"></span><h3>Data Scientist Intern — Ripik.AI</h3><p class="meta">Apr 2022 – Jul 2022  ·  Industrial optimisation through AI/ML</p>
 <div class="secs"><div class="sec"><h4>Piramal plant: furnace optimisation</h4><p>Integrated a Distributed Random Forest (DRF) model into plant operations to raise output efficiency and cut energy use. DPR efficiency up 3%; specific fuel consumption down 116.64 Kcal/Kg.</p></div><div class="sec"><h4>Mahendra Brothers Exports: diamond pricing</h4><p>Built and deployed a DRF price-prediction model for optimum B2B price discovery from diamond characteristics.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Machine learning</li><li>Predictive modelling</li><li>Model deployment</li><li>Pricing analytics</li></ul></div></article></div>
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects" data-section="projects">
     <div class="wrap">
-      <p class="eyebrow">Projects</p>
-      <h2 class="title">Academic projects · IIT Delhi</h2><div class="rule"></div>
-      <div class="grid2"><article class="card wide"><span class="bar"></span><h3>Controller Placement in Software-Defined Networks</h3><p class="meta">Aug 2023 – Apr 2024  ·  B.Tech project  ·  Guide: Prof. Amber Srivastava</p>
-<div class="secs"><div class="sec"><h4>Objective</h4><p>Optimal controller placement in large software-defined networks (an NP-hard non-linear integer program) to cut delay and message overhead.</p></div><div class="sec"><h4>Approach</h4><p>Designed a multi-controller edge system and applied the Maximum Entropy Principle to avoid local optima, benchmarked in MATLAB.</p></div><div class="sec"><h4>Outcome</h4><p>2x faster solutions and 40% lower design cost on larger networks.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Combinatorial optimisation</li><li>Network design</li><li>MATLAB</li><li>Algorithm benchmarking</li></ul></div></article><article class="card wide"><span class="bar"></span><h3>Impact of Inflation on Stock Market Performance</h3><p class="meta">Jan 2023 – May 2023  ·  Guide: Prof. Neeru Chaudhary</p>
-<div class="secs"><div class="sec"><h4>Objective</h4><p>Quantify how far the inflation rate explains Nifty performance.</p></div><div class="sec"><h4>Approach</h4><p>Analysed historical inflation and Nifty data and built a multiple regression model.</p></div><div class="sec"><h4>Outcome</h4><p>17.6% correlation; a 1% rise in inflation coincided with a 17.28% rise in Nifty. An R² of 0.037 showed inflation alone explains little, pointing to multi-factor models.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Regression analysis</li><li>Econometrics</li><li>Hypothesis testing</li><li>Python</li></ul></div></article><article class="card wide"><span class="bar"></span><h3>Solving the Swift-Hohenberg Equation with Physics-Informed Neural Networks</h3><p class="meta">Feb 2022 – Apr 2022  ·  Guide: Prof. Sitikanta Roy</p>
+      <div class="rv"><p class="eyebrow">Projects</p><h2 class="title">Academic projects · IIT Delhi</h2><div class="rule"></div></div>
+      <div class="grid2"><article class="card rv tilt wide"><span class="bar"></span><h3>Controller Placement in Software-Defined Networks</h3><p class="meta">Aug 2023 – Apr 2024  ·  B.Tech project  ·  Guide: Prof. Amber Srivastava</p>
+<div class="secs"><div class="sec"><h4>Objective</h4><p>Optimal controller placement in large software-defined networks (an NP-hard non-linear integer program) to cut delay and message overhead.</p></div><div class="sec"><h4>Approach</h4><p>Designed a multi-controller edge system and applied the Maximum Entropy Principle to avoid local optima, benchmarked in MATLAB.</p></div><div class="sec"><h4>Outcome</h4><p>2x faster solutions and 40% lower design cost on larger networks.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Combinatorial optimisation</li><li>Network design</li><li>MATLAB</li><li>Algorithm benchmarking</li></ul></div></article><article class="card rv tilt wide"><span class="bar"></span><h3>Impact of Inflation on Stock Market Performance</h3><p class="meta">Jan 2023 – May 2023  ·  Guide: Prof. Neeru Chaudhary</p>
+<div class="secs"><div class="sec"><h4>Objective</h4><p>Quantify how far the inflation rate explains Nifty performance.</p></div><div class="sec"><h4>Approach</h4><p>Analysed historical inflation and Nifty data and built a multiple regression model.</p></div><div class="sec"><h4>Outcome</h4><p>17.6% correlation; a 1% rise in inflation coincided with a 17.28% rise in Nifty. An R² of 0.037 showed inflation alone explains little, pointing to multi-factor models.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Regression analysis</li><li>Econometrics</li><li>Hypothesis testing</li><li>Python</li></ul></div></article><article class="card rv tilt wide"><span class="bar"></span><h3>Solving the Swift-Hohenberg Equation with Physics-Informed Neural Networks</h3><p class="meta">Feb 2022 – Apr 2022  ·  Guide: Prof. Sitikanta Roy</p>
 <div class="secs"><div class="sec"><h4>Objective</h4><p>Solve the non-linear Swift-Hohenberg PDE with neural networks and validate against numerical methods.</p></div><div class="sec"><h4>Approach</h4><p>Built a Physics-Informed Neural Network, cross-validated with Finite Difference data, and tuned layers, neurons and batch sizes.</p></div><div class="sec"><h4>Outcome</h4><p>~82% accuracy against the finite difference solution.</p></div></div><div class="sec"><h4>Skills</h4><ul class="pills"><li>Deep learning</li><li>Numerical methods</li><li>PyTorch / TensorFlow</li><li>Hyperparameter tuning</li></ul></div></article></div>
     </div>
   </section>
 
-  <section id="leadership">
+  <section id="leadership" data-section="projects">
     <div class="wrap">
-      <p class="eyebrow">Leadership</p>
-      <h2 class="title">Leadership &amp; positions of responsibility</h2><div class="rule"></div>
-      <div class="grid3"><article class="card amber"><span class="bar"></span><h3>Captain, IIT Delhi Basketball Team</h3><p>Led the institute&#x27;s squad through selection, training and inter-college tournaments.</p><ul class="bullets"><li>1st place, Urja 2024</li><li>2nd place, 55th Inter IIT Sports Meet 2023</li><li>Ran trials, training plans and match prep</li></ul><div class="sec"><h4>Skills</h4><ul class="pills"><li>Team leadership</li><li>Performance under pressure</li><li>Discipline</li></ul></div></article><article class="card amber"><span class="bar"></span><h3>Sports Contingent Lead, Hostel</h3><p>Led the hostel&#x27;s multi-sport contingent in the Inter Hostel Sports General Championship.</p><ul class="bullets"><li>Won the General Championship in 2023 and 2024</li><li>Ran training camps, trials and selections</li><li>Planned travel to inter-college tournaments</li></ul><div class="sec"><h4>Skills</h4><ul class="pills"><li>Multi-team coordination</li><li>Scheduling</li><li>Logistics</li></ul></div></article><article class="card amber"><span class="bar"></span><h3>Finance and Operations, Technical Fest</h3><p>Managed budget and coordination for IIT Delhi&#x27;s 4-day technical fest.</p><ul class="bullets"><li>Built a budget-tracking platform for line-item spend</li><li>Coordinated a team of 200+ members</li><li>Reduced the overall festival budget through tighter accounting</li></ul><div class="sec"><h4>Skills</h4><ul class="pills"><li>Budgeting</li><li>Financial control</li><li>Large-team management</li></ul></div></article></div>
+      <div class="rv"><p class="eyebrow">Leadership</p><h2 class="title">Leadership &amp; positions of responsibility</h2><div class="rule"></div></div>
+      <div class="grid3"><article class="card rv tilt amber"><span class="bar"></span><h3>Captain, IIT Delhi Basketball Team</h3><p>Led the institute&#x27;s squad through selection, training and inter-college tournaments.</p><ul class="bullets"><li>1st place, Urja 2024</li><li>2nd place, 55th Inter IIT Sports Meet 2023</li><li>Ran trials, training plans and match prep</li></ul><div class="sec"><h4>Skills</h4><ul class="pills"><li>Team leadership</li><li>Performance under pressure</li><li>Discipline</li></ul></div></article><article class="card rv tilt amber"><span class="bar"></span><h3>Sports Contingent Lead, Hostel</h3><p>Led the hostel&#x27;s multi-sport contingent in the Inter Hostel Sports General Championship.</p><ul class="bullets"><li>Won the General Championship in 2023 and 2024</li><li>Ran training camps, trials and selections</li><li>Planned travel to inter-college tournaments</li></ul><div class="sec"><h4>Skills</h4><ul class="pills"><li>Multi-team coordination</li><li>Scheduling</li><li>Logistics</li></ul></div></article><article class="card rv tilt amber"><span class="bar"></span><h3>Finance and Operations, Technical Fest</h3><p>Managed budget and coordination for IIT Delhi&#x27;s 4-day technical fest.</p><ul class="bullets"><li>Built a budget-tracking platform for line-item spend</li><li>Coordinated a team of 200+ members</li><li>Reduced the overall festival budget through tighter accounting</li></ul><div class="sec"><h4>Skills</h4><ul class="pills"><li>Budgeting</li><li>Financial control</li><li>Large-team management</li></ul></div></article></div>
     </div>
   </section>
 
-  <section id="highlights">
+  <section id="highlights" data-section="projects">
     <div class="wrap">
-      <p class="eyebrow">Impact highlights</p>
-      <h2 class="title">What I've delivered</h2><div class="rule"></div>
+      <div class="rv"><p class="eyebrow">Impact highlights</p><h2 class="title">What I've delivered</h2><div class="rule"></div></div>
       <div class="grid3">
-        <article class="card hl-card"><span class="bar"></span><p class="tag">PRODUCT OWNERSHIP</p><h3>0→1 and 1→100</h3><p>Launched LAP in 4 weeks, then cut its disbursal TAT from 15 to 6 days through 8 API integrations and journey redesign.</p></article>
-        <article class="card hl-card"><span class="bar"></span><p class="tag">STRATEGY + EXECUTION</p><h3>CEO-level planning</h3><p>Ran two annual strategy cycles and authored the FY26 Annual Operating Plan, then project-managed the portfolio to completion.</p></article>
-        <article class="card hl-card"><span class="bar"></span><p class="tag">LENDING DOMAIN DEPTH</p><h3>LOS · LMS · DA · DSA</h3><p>Hands-on with LOS, LMS, the mortgage business, digital lending, Direct Assignment, and banking and DSA partnerships.</p></article>
+        <article class="card rv tilt hl-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15l-3-3a12 12 0 0 1 12-9 12 12 0 0 1-9 12z"/><circle cx="15" cy="9" r="1.5"/></svg></span><span class="bar"></span><p class="tag">PRODUCT OWNERSHIP</p><h3>0→1 and 1→100</h3><p>Launched LAP in 4 weeks, then cut its disbursal TAT from 15 to 6 days through 8 API integrations and journey redesign.</p></article>
+        <article class="card rv tilt hl-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><span class="bar"></span><p class="tag">STRATEGY + EXECUTION</p><h3>CEO-level planning</h3><p>Ran two annual strategy cycles and authored the FY26 Annual Operating Plan, then project-managed the portfolio to completion.</p></article>
+        <article class="card rv tilt hl-card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18"/></svg></span><span class="bar"></span><p class="tag">LENDING DOMAIN DEPTH</p><h3>LOS · LMS · DA · DSA</h3><p>Hands-on with LOS, LMS, the mortgage business, digital lending, Direct Assignment, and banking and DSA partnerships.</p></article>
       </div>
-      <h2 class="sub-title">What I bring to the table</h2>
+      <h2 class="sub-title rv">What I bring to the table</h2>
       <div class="grid2">
-        <article class="card amber"><span class="bar"></span><h3>Complete ownership</h3><p>I treat every problem as mine end to end, from the first BRD to the last reconciliation entry, and follow it through until it is closed.</p></article>
-        <article class="card amber"><span class="bar"></span><h3>Fast learning and quick adaptability</h3><p>Four fields in four years: industrial ML, fixed-income derivatives, network optimisation research and fintech lending. At Jio Credit, I launched a new lending product within weeks of joining.</p></article>
-        <article class="card amber"><span class="bar"></span><h3>Root-cause, data-driven thinking</h3><p>I fix the system, not the symptom: I trace an issue to where it starts, back decisions with numbers, and build the fix myself with Google Sheets, Apps Script or Python when a system gap blocks the team.</p></article>
-        <article class="card amber"><span class="bar"></span><h3>Bridge across functions</h3><p>I translate between Sales, Credit, Risk, Finance, Ops and Tech, communicate with clarity at CXO level, and bring a captain's team-first discipline to every group I work with.</p></article>
+        <article class="card rv tilt amber"><span class="bar"></span><h3>Complete ownership</h3><p>I treat every problem as mine end to end, from the first BRD to the last reconciliation entry, and follow it through until it is closed.</p></article>
+        <article class="card rv tilt amber"><span class="bar"></span><h3>Fast learning and quick adaptability</h3><p>Four fields in four years: industrial ML, fixed-income derivatives, network optimisation research and fintech lending. At Jio Credit, I launched a new lending product within weeks of joining.</p></article>
+        <article class="card rv tilt amber"><span class="bar"></span><h3>Root-cause, data-driven thinking</h3><p>I fix the system, not the symptom: I trace an issue to where it starts, back decisions with numbers, and build the fix myself with Google Sheets, Apps Script or Python when a system gap blocks the team.</p></article>
+        <article class="card rv tilt amber"><span class="bar"></span><h3>Bridge across functions</h3><p>I translate between Sales, Credit, Risk, Finance, Ops and Tech, communicate with clarity at CXO level, and bring a captain's team-first discipline to every group I work with.</p></article>
       </div>
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" data-section="contact">
     <div class="wrap">
-      <div class="cta">
+      <div class="cta rv">
+        <span class="bub a" data-parallax="0.12"></span><span class="bub b" data-parallax="-0.1"></span><span class="bub c" data-parallax="0.2"></span>
         <p class="eyebrow">Get in touch</p>
         <h2>Open to product and strategy roles in fintech and high-ownership teams.</h2>
         <p>I reply within 48 hours.</p>
-        <a class="btn white" href="mailto:pranshuc01@gmail.com">Let's talk →</a>
+        <a class="cta-mail" data-magnetic href="mailto:pranshuc01@gmail.com">Let's talk →</a>
         <div class="row">
-          <a class="btn outline" href="assets/Pranshu_Jain_CV.pdf" download>Résumé (PDF)</a>
-          <a class="btn outline" href="https://www.linkedin.com/in/pranshu-jain-664b27223/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="cta-cv" href="assets/Pranshu_Jain_CV.pdf" download>Résumé (PDF) ↓</a><a class="cta-li" href="https://www.linkedin.com/in/pranshu-jain-664b27223/" target="_blank" rel="noopener">LinkedIn ↗</a>
         </div>
         <p class="small"><a href="mailto:pranshuc01@gmail.com">pranshuc01@gmail.com</a> · Pune, Maharashtra</p>
       </div>
@@ -295,13 +409,253 @@
 </main>
 
 <footer>© 2026 Pranshu Jain</footer>
+<button class="top-btn" type="button" data-top aria-label="Back to top"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22.5"/></svg>↑</button>
 
+</div>
 <script>
-  document.getElementById('themeToggle').addEventListener('click', function () {
-    var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    try { localStorage.setItem('theme', next); } catch (e) {}
+function initPortfolio(root) {
+  var win = window, doc = document;
+  var reduce = win.matchMedia && win.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var cleanups = [];
+  var on = function (el, ev, fn, opt) { el.addEventListener(ev, fn, opt); cleanups.push(function () { el.removeEventListener(ev, fn, opt); }); };
+  var $ = function (s) { return root.querySelector(s); };
+  var $$ = function (s) { return Array.prototype.slice.call(root.querySelectorAll(s)); };
+
+  /* Theme */
+  var saved = null;
+  try { saved = localStorage.getItem("theme"); } catch (e) {}
+  if (!saved) saved = win.matchMedia && win.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  root.setAttribute("data-mode", saved);
+  var toggle = $("[data-theme-toggle]");
+  if (toggle) on(toggle, "click", function () {
+    var next = root.getAttribute("data-mode") === "dark" ? "light" : "dark";
+    var apply = function () { root.setAttribute("data-mode", next); try { localStorage.setItem("theme", next); } catch (e) {} };
+    if (!doc.startViewTransition || reduce) { apply(); return; }
+    var r = toggle.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
+    var end = Math.hypot(Math.max(x, win.innerWidth - x), Math.max(y, win.innerHeight - y));
+    doc.startViewTransition(apply).ready.then(function () {
+      doc.documentElement.animate({ clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + end + "px at " + x + "px " + y + "px)"] },
+        { duration: 650, easing: "cubic-bezier(.6,0,.2,1)", pseudoElement: "::view-transition-new(root)" });
+    });
   });
+
+  /* Pills get a stagger index */
+  $$(".pills").forEach(function (ul) { Array.prototype.forEach.call(ul.children, function (li, i) { li.style.setProperty("--i", i); }); });
+
+  /* Floating scroll layer */
+  var ICONS = {
+    rupee: '<path d="M6 4h12M6 9h12M6 4h4a5 5 0 0 1 0 10H6l9 7"/>',
+    pct: '<path d="M19 5L5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/>',
+    chart: '<path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/>',
+    target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',
+    bulb: '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/>',
+    code: '<path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/>',
+    layers: '<path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/>',
+    bank: '<path d="M3 10l9-6 9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18"/>',
+    pie: '<path d="M21 12A9 9 0 1 1 12 3v9z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/>',
+    ball: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18M5.6 5.6c3.5 3.5 3.5 9.3 0 12.8M18.4 5.6c-3.5 3.5-3.5 9.3 0 12.8"/>'
+  };
+  var SPEC = [
+    ["ico", "rupee", 6, .10, 56, .45, 1], ["dot", "", 18, .32, 22, .2, 0], ["ring", "", 84, .18, 90, .3, 1],
+    ["ico", "chart", 90, .55, 60, .55, 0], ["dot", "", 72, .08, 14, .7, 1], ["ico", "pct", 14, .62, 50, .35, 1],
+    ["ring", "", 4, .85, 60, .6, 0], ["ico", "bulb", 62, .9, 54, .25, 1], ["dot", "", 40, .5, 10, .8, 0],
+    ["ico", "code", 30, .02, 46, .65, 0], ["ico", "target", 80, .74, 52, .4, 1], ["dot", "", 95, .38, 30, .15, 1],
+    ["ico", "layers", 48, .78, 48, .5, 0], ["ring", "", 52, .3, 40, .75, 1], ["ico", "bank", 22, .95, 54, .3, 0],
+    ["ico", "pie", 70, .45, 44, .6, 1], ["dot", "", 8, .4, 26, .5, 1], ["ico", "ball", 36, .66, 50, .45, 1]
+  ];
+  var layer = $(".floaters"), floaters = [];
+  if (layer) {
+    layer.innerHTML = "";
+    SPEC.forEach(function (s, i) {
+      var el = doc.createElement("span");
+      el.className = "fl " + s[0] + (s[6] ? " am" : "");
+      el.style.setProperty("--x", s[2] + "%");
+      el.style.setProperty("--y", "0px");
+      el.style.setProperty("--s", s[4] + "px");
+      if (s[0] === "ico") el.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + ICONS[s[1]] + "</svg>";
+      layer.appendChild(el);
+      floaters.push({ el: el, y: s[3], d: s[5], ph: i * 1.7, size: s[4] });
+    });
+  }
+
+  /* Reveal on scroll (transform-led) */
+  var io = null;
+  if (!reduce && "IntersectionObserver" in win) {
+    root.classList.add("motion");
+    io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("in");
+        var rule = e.target.querySelector(".rule");
+        if (rule) rule.classList.add("in");
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    $$(".rv").forEach(function (el, i) {
+      var sib = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+      el.style.transitionDelay = (sib % 3) * 90 + "ms";
+      io.observe(el);
+    });
+  } else {
+    $$(".rv, .rule").forEach(function (el) { el.classList.add("in"); });
+  }
+
+  /* Counters */
+  var cio = null;
+  if (!reduce && "IntersectionObserver" in win) {
+    cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        cio.unobserve(e.target);
+        var el = e.target, to = +el.getAttribute("data-count"), t0 = performance.now(), dur = 1500;
+        var step = function (t) {
+          var k = Math.min(1, (t - t0) / dur), v = 1 - Math.pow(1 - k, 3);
+          el.textContent = Math.round(to * v);
+          if (k < 1) requestAnimationFrame(step);
+        };
+        el.textContent = "0";
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.6 });
+    $$("[data-count]").forEach(function (el) { cio.observe(el); });
+  }
+
+  /* Typer */
+  var typer = $("[data-typer]"), typeTimer = 0;
+  if (typer && !reduce) {
+    var lines = [typer.textContent, "Building 0 → 1, scaling 1 → 100", "IIT Delhi engineer · Data-driven PM"];
+    var li = 0, ci = lines[0].length, del = false;
+    var tick = function () {
+      var line = lines[li];
+      if (!del) {
+        ci++;
+        if (ci > line.length) { del = true; typeTimer = setTimeout(tick, 2200); return; }
+      } else {
+        ci--;
+        if (ci < 0) { del = false; li = (li + 1) % lines.length; ci = 0; typeTimer = setTimeout(tick, 300); return; }
+      }
+      typer.textContent = lines[li].slice(0, Math.max(0, ci));
+      typeTimer = setTimeout(tick, del ? 28 : 55);
+    };
+    typeTimer = setTimeout(function () { del = true; tick(); }, 2600);
+    cleanups.push(function () { clearTimeout(typeTimer); });
+  }
+
+  /* Card tilt + glare */
+  $$(".card").forEach(function (card) {
+    on(card, "pointermove", function (e) {
+      var r = card.getBoundingClientRect(), px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+      card.style.setProperty("--mx", e.clientX - r.left + "px");
+      card.style.setProperty("--my", e.clientY - r.top + "px");
+      if (reduce || !card.classList.contains("tilt") || (root.classList.contains("motion") && !card.classList.contains("in"))) return;
+      card.classList.add("hovering");
+      card.style.transform = "perspective(900px) rotateX(" + ((0.5 - py) * 7).toFixed(2) + "deg) rotateY(" + ((px - 0.5) * 7).toFixed(2) + "deg) translateY(-6px)";
+    });
+    on(card, "pointerleave", function () {
+      card.classList.remove("hovering");
+      card.style.transform = "";
+      card.style.setProperty("--mx", "-999px");
+    });
+  });
+
+  /* Magnetic CTAs */
+  $$("[data-magnetic]").forEach(function (el) {
+    on(el, "pointermove", function (e) {
+      if (reduce) return;
+      var r = el.getBoundingClientRect();
+      el.style.transform = "translate(" + (e.clientX - r.left - r.width / 2) * 0.25 + "px," + (e.clientY - r.top - r.height / 2) * 0.35 + "px)";
+    });
+    on(el, "pointerleave", function () { el.style.transform = ""; });
+  });
+
+  /* Hero glow + photo tilt */
+  var hero = $(".hero"), glow = $(".hero .glow"), photo = $("[data-photo-tilt]");
+  if (hero && !reduce) {
+    on(hero, "pointermove", function (e) {
+      var r = hero.getBoundingClientRect();
+      if (glow) { glow.style.setProperty("--gx", e.clientX - r.left - 280 + "px"); glow.style.setProperty("--gy", e.clientY - r.top - 280 + "px"); }
+      if (photo) {
+        var px = (e.clientX - r.left) / r.width - 0.5, py = (e.clientY - r.top) / r.height - 0.5;
+        photo.style.transform = "perspective(900px) rotateY(" + px * 14 + "deg) rotateX(" + -py * 10 + "deg)";
+      }
+    });
+    on(hero, "pointerleave", function () { if (photo) photo.style.transform = ""; });
+  }
+
+  /* Back to top */
+  var topBtn = $("[data-top]");
+  if (topBtn) on(topBtn, "click", function () { win.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); });
+
+  /* Nav indicator */
+  var nav = $(".nav nav"), ind = $(".nav .indicator"), links = $$(".nav nav a.link"), sections = $$("[data-section]");
+  var current = "";
+  var setActive = function (id) {
+    if (id === current) return;
+    current = id;
+    var hit = null;
+    links.forEach(function (a) { var m = a.getAttribute("href") === "#" + id; a.classList.toggle("active", m); if (m) hit = a; });
+    if (!ind) return;
+    if (!hit) { ind.style.opacity = "0"; return; }
+    ind.style.opacity = "1";
+    ind.style.width = hit.offsetWidth + "px";
+    ind.style.transform = "translateX(" + hit.offsetLeft + "px)";
+  };
+
+  /* Main frame loop: progress, parallax, floaters */
+  var parallax = $$("[data-parallax]"), rail = $("#work"), railFill = $(".rail i");
+  var sy = win.scrollY, ty = sy, vel = 0, mx = 0, my = 0, tmx = 0, tmy = 0, raf = 0, t0 = performance.now();
+  on(win, "pointermove", function (e) { tmx = e.clientX / win.innerWidth - 0.5; tmy = e.clientY / win.innerHeight - 0.5; }, { passive: true });
+  var frame = function (now) {
+    ty = win.scrollY;
+    var prev = sy;
+    sy += (ty - sy) * 0.12;
+    vel += ((sy - prev) - vel) * 0.2;
+    mx += (tmx - mx) * 0.06; my += (tmy - my) * 0.06;
+    var vh = win.innerHeight, max = Math.max(1, doc.documentElement.scrollHeight - vh), p = ty / max;
+    root.style.setProperty("--p", p.toFixed(4));
+    if (topBtn) { topBtn.classList.toggle("show", ty > 600); topBtn.style.setProperty("--p", p.toFixed(4)); }
+
+    var mark = vh * 0.4, id = "";
+    sections.forEach(function (s) { if (s.getBoundingClientRect().top <= mark) id = s.getAttribute("data-section"); });
+    setActive(id);
+
+    if (!reduce) {
+      var t = (now - t0) / 1000, span = vh + 240, skew = Math.max(-25, Math.min(25, vel * 0.9));
+      floaters.forEach(function (f) {
+        var y = ((f.y * span - sy * f.d) % span + span) % span - 120;
+        var x = Math.sin(t * 0.35 + f.ph + sy * 0.002) * 26 + mx * f.d * -90;
+        var yy = y + Math.cos(t * 0.5 + f.ph) * 10 + my * f.d * -60;
+        var rot = sy * f.d * 0.12 + Math.sin(t * 0.3 + f.ph) * 8 + skew * f.d;
+        var sc = 1 + Math.min(0.35, Math.abs(vel) * 0.004 * f.d * 10);
+        f.el.style.transform = "translate3d(" + x.toFixed(1) + "px," + yy.toFixed(1) + "px,0) rotate(" + rot.toFixed(1) + "deg) scale(" + sc.toFixed(3) + ")";
+      });
+      parallax.forEach(function (el) {
+        var r = el.getBoundingClientRect(), k = parseFloat(el.getAttribute("data-parallax")) || 0;
+        var off = (r.top + r.height / 2 - vh / 2) * k;
+        el.style.translate = "0 " + off.toFixed(1) + "px";
+      });
+      if (rail && railFill) {
+        var rr = rail.getBoundingClientRect();
+        var f2 = Math.max(0, Math.min(1, (mark - rr.top) / rr.height));
+        railFill.parentElement.style.setProperty("--fill", f2.toFixed(4));
+      }
+    }
+    raf = requestAnimationFrame(frame);
+  };
+  raf = requestAnimationFrame(frame);
+  cleanups.push(function () { cancelAnimationFrame(raf); });
+
+  return function () {
+    cleanups.forEach(function (fn) { fn(); });
+    if (io) io.disconnect();
+    if (cio) cio.disconnect();
+    if (layer) layer.innerHTML = "";
+    root.classList.remove("motion");
+  };
+}
+
+initPortfolio(document.getElementById('pj'));
+new MutationObserver(function(){document.body.style.background=document.getElementById('pj').getAttribute('data-mode')==='light'?'#F8FAFC':'#0B1F3A';}).observe(document.getElementById('pj'),{attributes:true,attributeFilter:['data-mode']});
 </script>
 </body>
 </html>
